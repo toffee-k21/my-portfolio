@@ -6,9 +6,10 @@ import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Suspense } from "react"
 import "./globals.css"
+import { AppProvider } from "@/utils/Context"
 
 export const metadata: Metadata = {
-  title: "Alex Chen - Cloud & DevOps Developer",
+  title: "Taufiq - Cloud & DevOps Developer",
   description: "Full-Stack Developer specializing in Cloud, DevOps, MERN Stack, and Blockchain technologies",
   generator: "v0.app",
 }
@@ -22,9 +23,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
-          </ThemeProvider>
+          <AppProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+              {children}
+            </ThemeProvider>
+          </AppProvider>
         </Suspense>
         <Analytics />
       </body>
