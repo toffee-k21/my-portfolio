@@ -1,24 +1,45 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
-export async function GET(req: NextRequest) {
-  try {
-    if (!process.env.GITHUB_TOKEN) {
-        return NextResponse.json({ message: "Missing token" }, { status: 500 });
+export async function GET() {
+  const query = `
+    query {
+      user(login: "toffee-k21") {
+        contributionsCollection {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                date
+                contributionCount
+              }
+            }
+          }
+        }
       }
-    const res = await fetch("https://api.github.com/users/toffee-k21", {
+    }
+  `;
+
+  try {
+    const res = await fetch('https://api.github.com/graphql', {
+      method: 'POST',
       headers: {
-        Authorization: `token ${process.env.GITHUB_TOKEN}`,
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
       },
+      body: JSON.stringify({ query }),
+      cache: 'no-store',
     });
 
     if (!res.ok) {
-      const error = await res.json();
-      return NextResponse.json(error, { status: res.status });
+      return NextResponse.json(
+        { error: 'Failed to fetch data from GitHub GraphQL API' },
+        { status: res.status }
+      );
     }
 
     const data = await res.json();
     return NextResponse.json(data);
   } catch (err: any) {
-    return NextResponse.json({ message: err.message }, { status: 500 });
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }

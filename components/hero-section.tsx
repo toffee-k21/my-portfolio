@@ -8,7 +8,7 @@ import { useAppContext } from "@/utils/Context"
 export function HeroSection() {
   const [typedText, setTypedText] = useState("")
   const [problemsSolved, setProblemsSolved] = useState(0)
-  const {setLeetcode, setGithub} = useAppContext();
+  const {leetcode, setLeetcode, setGithub, gfg, setGfg} = useAppContext();
   const fullText = "Full-stack developer creating scalable Cloud, Web & Blockchain solutions with strong DSA skills"
 
   useEffect(() => {
@@ -45,12 +45,19 @@ export function HeroSection() {
     }
     fetchAndSetData();
 
+    //gfg
+    const GFGfetchAndSetData = async () => {
+      const res = await fetch(``);
+      const data = await res.json();
+      setGfg(data);
+      console.log(data);
+    }
+    // GFGfetchAndSetData();
+
     //github
     const fetchAndSetDataGithub = async () => {
       const res = await fetch('/api/github');
-      console.log(res);
       const data = await res.json();
-      console.log(data);
       setGithub(data);
       // const totalContribution = data.totalSolved;
       // const timer = setInterval(() => {
@@ -62,7 +69,7 @@ export function HeroSection() {
 
       // return () => clearInterval(timer);
     }
-    // fetchAndSetDataGithub();
+    fetchAndSetDataGithub();
   }, [])
 
   return (
@@ -113,7 +120,7 @@ export function HeroSection() {
           </div>
 
           <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto text-pretty">
-          Building scalable solutions at the intersection of Cloud/DevOps, Web Development, and Blockchain while strengthening my problem-solving skills on LeetCode, CodeChef, and GeeksforGeeks
+          {/* Building scalable solutions at the intersection of Cloud/DevOps, Web Development, and Blockchain while strengthening my problem-solving skills on LeetCode, CodeChef, and GeeksforGeeks */}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
@@ -127,7 +134,7 @@ export function HeroSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">347</div>
+              <div className="text-3xl font-bold text-primary mb-2">{leetcode?.totalSolved }</div>
               <div className="text-muted-foreground">LeetCode Problems</div>
             </div>
             <div className="text-center">

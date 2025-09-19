@@ -17,8 +17,8 @@ const skillCategories = [
       "Recursion",
       "Greedy Algorithms",
     ],
-    description: "300+ LeetCode problems solved",
-    anecdote: "Solved 47 problems in my current streak!",
+    description: "200+ LeetCode problems solved",
+    anecdote: "Solved 350+ problems accross different platform",
   },
   {
     title: "Cloud & DevOps",
