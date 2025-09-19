@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Code, Trophy, Target } from "lucide-react"
+import { ArrowDown, Code, Trophy, Target, GitMergeIcon,  } from "lucide-react"
+import githubLogo from "../public/github-logo.jpg"
+import leetCodeLogo from "../public/leetcode-logo.png"
 import { useAppContext } from "@/utils/Context"
+import Image from "next/image"
 
 export function HeroSection() {
   const [typedText, setTypedText] = useState("")
   const [problemsSolved, setProblemsSolved] = useState(0)
+  const [contibutions, setContibutions] = useState(0);
+
   const {leetcode, setLeetcode, setGithub, gfg, setGfg} = useAppContext();
   const fullText = "Full-stack developer creating scalable Cloud, Web & Blockchain solutions with strong DSA skills"
 
@@ -59,16 +64,16 @@ export function HeroSection() {
       const res = await fetch('/api/github');
       const data = await res.json();
       setGithub(data);
-      // const totalContribution = data.totalSolved;
-      // const timer = setInterval(() => {
-      //   setProblemsSolved((prev) => {
-      //     if (prev < totalSolved) return prev + 7
-      //     return totalSolved;
-      //   })
-      // }, 50)
-
-      // return () => clearInterval(timer);
+      const totalContributions = data?.data?.user?.contributionsCollection?.contributionCalendar?.totalContributions;
+      const timer = setInterval(() => {
+        setContibutions((prev) => {
+          if (prev < totalContributions) return prev + 7
+          return totalContributions;
+        })
+      }, 50)
+      return () => clearInterval(timer);
     }
+
     fetchAndSetDataGithub();
   }, [])
 
@@ -107,15 +112,40 @@ export function HeroSection() {
 
           <div className="mb-8 p-6 bg-card rounded-lg border border-border max-w-md mx-auto">
             <div className="flex items-center justify-center gap-4">
-              <Trophy className="h-8 w-8 text-primary" />
-              <div>
-                <div className="text-3xl font-bold text-primary">{problemsSolved}</div>
-                <div className="text-sm text-muted-foreground">Problems Solved</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary">{`400+`}</div>
-                <div className="text-sm text-muted-foreground">Past year contribution</div>
-              </div>
+              {/* LeetCode Card */}
+    <a 
+      href="https://leetcode.com/tfq21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="flex items-center justify-center hover:scale-105 transition-transform"
+    >
+      <div className="m-1">
+        <Image src={leetCodeLogo} alt="LeetCode Logo" width={50} height={50} />
+      </div>
+      <div>
+        <div className="text-3xl font-bold text-primary">{problemsSolved}</div>
+        <div className="text-sm text-muted-foreground">Problems Solved</div>
+        <div className="text-sm opacity-50 text-muted-foreground">on LeetCode</div>
+      </div>
+    </a>
+
+    {/* GitHub Card */}
+    <a 
+      href="https://github.com/toffee-k21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="flex items-center justify-center hover:scale-105 transition-transform"
+    >
+      <div className="m-1">
+        <Image src={githubLogo} alt="GitHub Logo" width={42} height={42} />
+      </div>
+      <div>
+        <div className="text-3xl font-bold text-primary">{contibutions}</div>
+        <div className="text-sm text-muted-foreground">GitHub Contributions</div>
+        <div className="text-sm opacity-50 text-muted-foreground">last 12 months</div>
+      </div>
+    </a>
+
             </div>
           </div>
 
@@ -124,12 +154,18 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button size="lg" className="animate-glow text-lg px-8 py-3">
-              View My Projects
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3 bg-transparent">
+            <a
+              href="https://drive.google.com/file/d/1gz37EBYkmAxUs7XlTQXq9HPy95p32f1v/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="animate-glow text-lg px-8 py-3">
+                View Resume
+              </Button>
+            </a>
+            {/* <Button variant="outline" size="lg" className="text-lg px-8 py-3 bg-transparent">
               See My Progress
-            </Button>
+            </Button> */}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
@@ -148,9 +184,9 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ArrowDown className="h-6 w-6 text-primary" />
-        </div>
+        </div> */}
       </div>
     </section>
   )

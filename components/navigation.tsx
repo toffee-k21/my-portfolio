@@ -22,7 +22,7 @@ export function Navigation() {
     { href: "#home", label: "Home" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
-    { href: "#blockchain", label: "Blockchain" },
+    { href: "#dsa", label: "DSA" },
     { href: "#contact", label: "Contact" },
   ]
 
