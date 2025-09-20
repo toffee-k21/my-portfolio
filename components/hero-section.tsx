@@ -40,6 +40,7 @@ export function HeroSection() {
       const data = await res.json();
       setLeetcode(data);
       const totalSolved = data.totalSolved;
+      console.log(data);
       const timer = setInterval(() => {
         setProblemsSolved((prev) => {
           if (prev < totalSolved) return prev + 7
@@ -49,7 +50,7 @@ export function HeroSection() {
 
       return () => clearInterval(timer);
     }
-    // fetchAndSetData();
+    fetchAndSetData();
 
     //gfg
     const GFGfetchAndSetData = async () => {
@@ -75,7 +76,7 @@ export function HeroSection() {
       return () => clearInterval(timer);
     }
 
-    // fetchAndSetDataGithub();
+    fetchAndSetDataGithub();
   }, [])
 
   return (
