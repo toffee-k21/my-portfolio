@@ -54,12 +54,12 @@ export function HeroSection() {
 
     //gfg
     const GFGfetchAndSetData = async () => {
-      const res = await fetch(``);
+      const res = await fetch(`/api/gfg?username=taufiq2fjol`);
       const data = await res.json();
       setGfg(data);
       console.log(data);
     }
-    // GFGfetchAndSetData();
+    GFGfetchAndSetData();
 
     //github
     const fetchAndSetDataGithub = async () => {

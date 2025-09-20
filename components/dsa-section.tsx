@@ -6,7 +6,7 @@ import { Calendar, TrendingUp } from "lucide-react"
 import { useAppContext } from "@/utils/Context"
 
 export function DSASection() {
-  const { leetcode } = useAppContext()
+  const { leetcode, gfg } = useAppContext()
   const submissionCalendar = leetcode?.submissionCalendar || {}
   const totalSolved = leetcode?.totalSolved;
   const totalQuestions = leetcode?.totalQuestions;
@@ -79,6 +79,21 @@ export function DSASection() {
       recent: ["Two Sum", "Valid Parentheses", "Merge Two Sorted Lists"],
     },
     {
+      name: "GeeksforGeeks",
+      solved: gfg?.info?.totalProblemsSolved,
+      total: 1000,
+      easySolved: gfg?.solvedStats?.easy?.count,
+      mediumSolved: gfg?.solvedStats?.medium?.count,
+      hardSolved: gfg?.solvedStats?.hard?.count,
+      totalEasy: 400,
+      totalMedium: 400,
+      totalHard: 200,
+      ranking: 15231,
+      acceptanceRate: 61.0,
+      color: "bg-green-500",
+      recent: ["Graph Algorithms", "Tree Traversal", "Sorting Techniques"],
+    },
+    {
       name: "CodeChef",
       solved: 156,
       total: 500,
@@ -92,21 +107,6 @@ export function DSASection() {
       acceptanceRate: 74.2,
       color: "bg-amber-500",
       recent: ["Chef and Strings", "Binary Search", "Dynamic Programming"],
-    },
-    {
-      name: "GeeksforGeeks",
-      solved: 89,
-      total: 1000,
-      easySolved: 30,
-      mediumSolved: 40,
-      hardSolved: 19,
-      totalEasy: 400,
-      totalMedium: 400,
-      totalHard: 200,
-      ranking: 15231,
-      acceptanceRate: 61.0,
-      color: "bg-green-500",
-      recent: ["Graph Algorithms", "Tree Traversal", "Sorting Techniques"],
     },
   ]
   
@@ -208,26 +208,34 @@ export function DSASection() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-          <div className="w-full flex justify-center">
-            <div className="flex gap-2 overflow-x-auto">
-              {weeks.map((week, wIndex) => (
-                <div key={wIndex} className="flex flex-col gap-2">
-                  {week.map((day, dIndex) => (
-                    <div
-                      key={dIndex}
-                      title={`${day.count} problems on ${day.date.toDateString()}`}
-                      className={`w-3 h-3 rounded-sm ${getColorClass(day.count)}`}
-                    />
-                  ))}
-                </div>
-              ))}
-            </div>
-            {/* <p className="text-sm text-muted-foreground mt-3">
-              {fullDaysArray.reduce((acc, d) => acc + d.count, 0)} problems
-              solved in the last year • Longest streak: 47 days
-            </p> */}
-            </div>
-          </CardContent>
+  <div className="w-full flex justify-center">
+    <div className="flex gap-2 overflow-x-auto">
+      {/* Day labels column */}
+      <div className="flex flex-col gap-2 mr-2">
+  {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((dayLabel) => (
+    <div
+      key={dayLabel}
+      className="h-3 flex items-center justify-end text-[8px] text-muted-foreground w-6"
+    >
+      {dayLabel}
+    </div>
+  ))}
+</div>
+      {/* Heatmap weeks */}
+      {weeks.map((week, wIndex) => (
+        <div key={wIndex} className="flex flex-col gap-2">
+          {week.map((day, dIndex) => (
+            <div
+              key={dIndex}
+              title={`${day.count} problems on ${day.date.toDateString()}`}
+              className={`w-3 h-3 rounded-sm ${getColorClass(day.count)}`}
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</CardContent>
         </Card>
 
         {/* Motivation Quote */}
