@@ -7,6 +7,7 @@ import githubLogo from "../public/github-logo.jpg"
 import leetCodeLogo from "../public/leetcode-logo.png"
 import { useAppContext } from "@/utils/Context"
 import Image from "next/image"
+import TechFlow from "./tech-flow"
 
 export function HeroSection() {
   const [typedText, setTypedText] = useState("")
@@ -48,7 +49,7 @@ export function HeroSection() {
 
       return () => clearInterval(timer);
     }
-    fetchAndSetData();
+    // fetchAndSetData();
 
     //gfg
     const GFGfetchAndSetData = async () => {
@@ -74,7 +75,7 @@ export function HeroSection() {
       return () => clearInterval(timer);
     }
 
-    fetchAndSetDataGithub();
+    // fetchAndSetDataGithub();
   }, [])
 
   return (
@@ -163,30 +164,11 @@ export function HeroSection() {
                 View Resume
               </Button>
             </a>
-            {/* <Button variant="outline" size="lg" className="text-lg px-8 py-3 bg-transparent">
-              See My Progress
-            </Button> */}
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">{leetcode?.totalSolved }</div>
-              <div className="text-muted-foreground">LeetCode Problems</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">25+</div>
-              <div className="text-muted-foreground">Projects Built</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">47</div>
-              <div className="text-muted-foreground">Day Streak</div>
-            </div>
           </div>
         </div>
-
-        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="h-6 w-6 text-primary" />
-        </div> */}
+      </div>
+      <div>
+      <TechFlow />
       </div>
     </section>
   )
