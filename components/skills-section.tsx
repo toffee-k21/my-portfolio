@@ -55,8 +55,7 @@ export function SkillsSection() {
             Skills & Technologies
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Building expertise across problem-solving, cloud infrastructure, and modern development while preparing for
-            top product companies.
+          Building expertise in problem-solving, cloud infrastructure, and modern web development with hands-on experience across diverse technologies
           </p>
         </div>
 

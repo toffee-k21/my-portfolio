@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, Phone, X } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -33,19 +33,19 @@ export function ContactSection() {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com",
+      href: "https://github.com/toffee-k21",
       label: "GitHub",
       color: "hover:text-gray-900 dark:hover:text-gray-100",
     },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:text-blue-600" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter", color: "hover:text-blue-400" },
-    { icon: Mail, href: "mailto:alex@example.com", label: "Email", color: "hover:text-red-500" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/taufiq-hassan-311221295/", label: "LinkedIn", color: "hover:text-blue-600" },
+    { icon: X, href: "https://x.com/tfq_21", label: "X", color: "hover:text-blue-400" },
+    { icon: Mail, href: "mailto:taufiq2004.21@gmail.com", label: "Email", color: "hover:text-red-500" },
   ]
 
   const contactInfo = [
-    { icon: Mail, label: "alex.chen@example.com", href: "mailto:alex.chen@example.com" },
-    { icon: Phone, label: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, label: "San Francisco, CA", href: "#" },
+    { icon: Mail, label: "taufiq21.2004@gmail.com", href: "mailto:taufiq21.2004@gmail.com" },
+    // { icon: Phone, label: "+91 78", href: "tel:+15551234567" },
+    { icon: MapPin, label: "Delhi, India", href: "#" },
   ]
 
   return (

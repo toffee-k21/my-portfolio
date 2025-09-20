@@ -5,19 +5,20 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github, Cloud, Globe, Blocks } from "lucide-react"
+import nftorium from "../public/nftorium-view.png"
 
 const projects = [
   {
     id: 1,
-    title: "CloudScale Infrastructure",
+    title: "NFTorium",
     description:
-      "Automated AWS infrastructure deployment with Docker containers, CI/CD pipelines, and monitoring dashboards.",
-    image: "/cloud-infrastructure-dashboard-with-servers-and-mo.jpg",
-    tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
-    category: "Cloud",
-    icon: Cloud,
-    liveUrl: "#",
-    githubUrl: "#",
+      "NFTorium is your gateway to the world of digital art and collectibles! Built on the Sepolia Ethereum Testnet, NFTorium is a decentralized marketplace where users can mint, buy, sell, and trade NFTs effortlessly",
+    image: "/nftorium.png",
+    tags: ["Ethereum", "IPFS", "React", "Solidity", "Ethers.js"],
+    category: "Blockchain",
+    icon: Blocks,
+    liveUrl: "https://nftorium-toffee-k21s-projects.vercel.app/",
+    githubUrl: "https://github.com/toffee-k21/NFTorium",
   },
   {
     id: 2,
@@ -92,8 +93,7 @@ export function ProjectsSection() {
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            A showcase of innovative solutions spanning cloud infrastructure, web applications, and blockchain
-            technologies.
+          Building and showcasing dynamic web and blockchain-enabled applications.
           </p>
         </div>
 
