@@ -40,7 +40,7 @@ export function HeroSection() {
       const data = await res.json();
       setLeetcode(data);
       const totalSolved = data.totalSolved;
-      console.log(data);
+      // console.log(data);
       const timer = setInterval(() => {
         setProblemsSolved((prev) => {
           if (prev < totalSolved) return prev + 7
@@ -57,7 +57,7 @@ export function HeroSection() {
       const res = await fetch(`/api/gfg?username=taufiq2fjol`);
       const data = await res.json();
       setGfg(data);
-      console.log(data);
+      // console.log(data);
     }
     GFGfetchAndSetData();
 
@@ -66,6 +66,7 @@ export function HeroSection() {
       const res = await fetch('/api/github');
       const data = await res.json();
       setGithub(data);
+      console.log(data);
       const totalContributions = data?.data?.user?.contributionsCollection?.contributionCalendar?.totalContributions;
       const timer = setInterval(() => {
         setContibutions((prev) => {

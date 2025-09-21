@@ -5,7 +5,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github, Cloud, Globe, Blocks } from "lucide-react"
-import nftorium from "../public/nftorium-view.png"
+import { useAppContext } from "@/utils/Context"
+import SteakChartGithub from "./streak-chart-github"
 
 const projects = [
   {
@@ -81,7 +82,9 @@ const categories = ["All", "Cloud", "Web", "Blockchain"]
 
 export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState("All")
+  const {github} = useAppContext();
 
+const weeks = github?.data?.user?.contributionsCollection?.contributionCalendar?.weeks;
   const filteredProjects =
     activeCategory === "All" ? projects : projects.filter((project) => project.category === activeCategory)
 
@@ -168,6 +171,7 @@ export function ProjectsSection() {
           })}
         </div>
       </div>
+          <SteakChartGithub weeks={weeks}/>
     </section>
   )
 }
