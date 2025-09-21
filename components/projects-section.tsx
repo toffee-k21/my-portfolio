@@ -89,6 +89,7 @@ const weeks = github?.data?.user?.contributionsCollection?.contributionCalendar?
     activeCategory === "All" ? projects : projects.filter((project) => project.category === activeCategory)
 
   return (
+    <>
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -171,7 +172,8 @@ const weeks = github?.data?.user?.contributionsCollection?.contributionCalendar?
           })}
         </div>
       </div>
-          <SteakChartGithub weeks={weeks}/>
     </section>
+    <SteakChartGithub weeks={weeks}/>
+    </>
   )
 }

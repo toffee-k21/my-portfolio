@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { CardContent } from './ui/card'
+import Image from 'next/image'
+import leetcodeLogo from  "../public/leetcode-logo.png"
 
 // --- Heatmap intensity ---
 const getColorClass = (count: number) => {
@@ -23,7 +25,7 @@ const SteakChart = ({ weeks }: any) => {
   if (!weeks) return null
 
   return (
-    <div>
+    <div className='relative'>
       <CardContent>
         <div className="w-full flex justify-center">
           {/* Scrollable container */}
@@ -49,7 +51,7 @@ const SteakChart = ({ weeks }: any) => {
                 {week?.map((day: any, dIndex: number) => (
                   <div
                     key={dIndex}
-                    title={`${day.count} problems on ${new Date(day.date).toDateString()}`}
+                    title={`${day.count} submissions on ${new Date(day.date).toDateString()}`}
                     className={`w-3 h-3 rounded-sm ${getColorClass(day.count)}`}
                   />
                 ))}
@@ -58,6 +60,8 @@ const SteakChart = ({ weeks }: any) => {
           </div>
         </div>
       </CardContent>
+      <div className='text-white opacity-50 absolute bottom-0 right-10'> <Image src={leetcodeLogo} alt="GitHub Logo" width={32} height={32} />
+      </div>
     </div>
   )
 }

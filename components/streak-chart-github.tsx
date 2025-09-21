@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { CardContent } from './ui/card'
+import githubLogo from "../public/github-logo.jpg"
+import Image from 'next/image'
 
 // --- Heatmap intensity ---
 const getColorClass = (count: number) => {
@@ -23,7 +25,7 @@ const SteakChartGithub = ({ weeks }: any) => {
   if (!weeks || weeks.length === 0) return null
 
   return (
-    <div>
+    <div className='relative'>
       <CardContent>
         <div className="w-full flex justify-center">
           {/* Scrollable container */}
@@ -59,6 +61,8 @@ const SteakChartGithub = ({ weeks }: any) => {
           </div>
         </div>
       </CardContent>
+      <div className='text-white opacity-40 absolute bottom-0 right-10'> <Image src={githubLogo} alt="GitHub Logo" width={32} height={32} />
+      </div>
     </div>
   )
 }
