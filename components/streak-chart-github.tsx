@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { CardContent } from './ui/card'
 
 // --- Heatmap intensity ---
@@ -10,14 +10,24 @@ const getColorClass = (count: number) => {
   return "bg-green-500"
 }
 
-const SteakChart = ({ weeks }: any) => {
+const SteakChartGithub = ({ weeks }: any) => {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Scroll to the rightmost position on mount
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth
+    }
+  }, [weeks])
+
   if (!weeks || weeks.length === 0) return null
 
   return (
     <div>
       <CardContent>
         <div className="w-full flex justify-center">
-          <div className="flex gap-2 overflow-x-auto">
+          {/* Scrollable container */}
+          <div ref={scrollRef} className="flex gap-2 overflow-x-auto scrollbar-none">
             
             {/* Day labels column */}
             <div className="flex flex-col gap-2 mr-2">
@@ -53,4 +63,4 @@ const SteakChart = ({ weeks }: any) => {
   )
 }
 
-export default SteakChart
+export default SteakChartGithub
