@@ -23,12 +23,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "DeFi Trading Platform",
-    description: "Decentralized trading platform with smart contracts, liquidity pools, and real-time price feeds.",
-    image: "/cryptocurrency-trading-platform-interface-with-cha.jpg",
-    tags: ["Ethereum", "Solidity", "Web3.js", "React"],
-    category: "Blockchain",
-    icon: Blocks,
+    title: "Anonymous Space",
+    description: "A privacy-first anonymous posting app where users can share thoughts without sign-ups or personal data. Posts are AI-moderated in real time to block harmful or offensive content, ensuring a safe and secure community space.",
+    image: "/anonymous-space.png",
+    tags: ["Next", "Express", "GraphQL", "Postgres"],
+    category: "Web",
+    icon: Globe,
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -45,14 +45,14 @@ const projects = [
   },
   {
     id: 4,
-    title: "Microservices Architecture",
-    description: "Scalable microservices system with API gateway, service mesh, and distributed logging.",
-    image: "/microservices-architecture-diagram-with-connected-.jpg",
-    tags: ["Node.js", "Docker", "Redis", "PostgreSQL"],
-    category: "Cloud",
-    icon: Cloud,
+    title: "R³ – Reduce. Reuse. Recycle.",
+    description: "A sustainability-focused marketplace that makes second-hand shopping effortless and impactful. Users can buy, sell, or donate items, see the estimated carbon saved for each listing, and explore a special “Free / Pay What You Can” section to promote sharing and reduce waste — combining modern tech with eco-friendly values",
+    image: "/rCube.png",
+    tags: ["Socket.io", "Express", "React", "MongoDB"],
+    category: "Web",
+    icon: Globe,
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/toffee-k21/r3",
   },
   {
     id: 5,
@@ -131,20 +131,24 @@ const weeks = github?.data?.user?.contributionsCollection?.contributionCalendar?
                     alt={project.title}
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-4">
-                      <Button size="sm" variant="secondary" asChild>
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          Live
-                        </a>
-                      </Button>
-                      <Button size="sm" variant="secondary" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-2" />
-                          Code
-                        </a>
-                      </Button>
+                      {project.liveUrl && project.liveUrl !== "#" && (
+                        <Button size="sm" variant="secondary" asChild>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Live
+                          </a>
+                        </Button>
+                      )}
+                      {project.githubUrl && project.githubUrl !== "#" && (
+                        <Button size="sm" variant="secondary" asChild>
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4 mr-2" />
+                            Code
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </div>
                   <div className="absolute top-4 right-4">
