@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { CardContent } from './ui/card'
-import githubLogo from "../public/github-logo.jpg"
+import githubLogo from "../public/icons/github.jpg"
 import Image from 'next/image'
 
 // --- Heatmap intensity ---

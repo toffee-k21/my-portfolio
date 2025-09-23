@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Mail, Linkedin, Github, Book } from "lucide-react"
-import githubLogo from "../public/github-logo.jpg"
-import leetCodeLogo from "../public/leetcode-logo.png"
+import githubLogo from "../public/icons/github.jpg"
+import leetCodeLogo from "../public/icons/leetcode.png"
 import profilePic from "../public/profile.jpeg" // <-- replace with your actual profile image
 import { useAppContext } from "@/utils/Context"
 import Image from "next/image"

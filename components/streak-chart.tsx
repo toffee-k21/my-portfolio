@@ -1,15 +1,15 @@
 import React, { useEffect, useRef } from 'react'
 import { CardContent } from './ui/card'
 import Image from 'next/image'
-import leetcodeLogo from  "../public/leetcode-logo.png"
+import leetcodeLogo from  "../public/icons/leetcode.png"
 
 // --- Heatmap intensity ---
 const getColorClass = (count: number) => {
   if (count === 0) return "bg-muted"
-  if (count < 3) return "bg-primary/30"
-  if (count < 6) return "bg-primary/60"
-  if (count < 10) return "bg-primary/80"
-  return "bg-primary"
+  if (count < 3) return "bg-orange-500/30"
+  if (count < 6) return "bg-orange-500/60"
+  if (count < 10) return "bg-orange-500/80"
+  return "bg-orange-500"
 }
 
 const SteakChart = ({ weeks }: any) => {
