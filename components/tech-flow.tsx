@@ -68,7 +68,7 @@ const lane3 = [
   { src: graphql, alt: "graphql" },
 ]
 
-export default function MultiLaneFloatingTech() {
+export default function TechFlow() {
   const [logos, setLogos] = useState<FloatingLogo[]>([])
 
   useEffect(() => {

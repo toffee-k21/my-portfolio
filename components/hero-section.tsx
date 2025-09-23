@@ -2,175 +2,208 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Code, Trophy, Target, GitMergeIcon,  } from "lucide-react"
+import { Mail, Linkedin, Github, Book } from "lucide-react"
 import githubLogo from "../public/github-logo.jpg"
 import leetCodeLogo from "../public/leetcode-logo.png"
+import profilePic from "../public/profile.jpeg" // <-- replace with your actual profile image
 import { useAppContext } from "@/utils/Context"
 import Image from "next/image"
-import TechFlow from "./tech-flow"
+import { motion } from "framer-motion"
 
 export function HeroSection() {
   const [typedText, setTypedText] = useState("")
   const [problemsSolved, setProblemsSolved] = useState(0)
-  const [contibutions, setContibutions] = useState(0);
+  const [contributions, setContributions] = useState(0)
 
-  const {leetcode, setLeetcode, setGithub, gfg, setGfg} = useAppContext();
-  const fullText = "Full-stack developer creating scalable Cloud, Web & Blockchain solutions with strong DSA skills"
+  const { setLeetcode, setGithub, setGfg } = useAppContext()
 
+  const fullText =
+    "Full-stack developer creating scalable Cloud, Web & Blockchain solutions with strong DSA skills"
+
+  // typing effect
   useEffect(() => {
     let i = 0
     const timer = setInterval(() => {
       if (i < fullText.length) {
         setTypedText(fullText.slice(0, i + 1))
         i++
-      } else {
-        clearInterval(timer)
-      }
-    }, 50)
-
+      } else clearInterval(timer)
+    }, 40)
     return () => clearInterval(timer)
   }, [])
 
-
-
+  // fetch stats
   useEffect(() => {
-    //leetcode
     const fetchAndSetData = async () => {
-      const res = await fetch('https://leetcode-stats-api.herokuapp.com/tfq21');
-      const data = await res.json();
-      setLeetcode(data);
-      const totalSolved = data.totalSolved;
-      // console.log(data);
+      const res = await fetch("https://leetcode-stats-api.herokuapp.com/tfq21")
+      const data = await res.json()
+      setLeetcode(data)
+      const totalSolved = data.totalSolved
       const timer = setInterval(() => {
-        setProblemsSolved((prev) => {
-          if (prev < totalSolved) return prev + 7
-          return totalSolved;
-        })
-      }, 50)
-
-      return () => clearInterval(timer);
+        setProblemsSolved((prev) =>
+          prev < totalSolved ? prev + 7 : totalSolved
+        )
+      }, 40)
+      return () => clearInterval(timer)
     }
-    fetchAndSetData();
+    fetchAndSetData()
 
-    //gfg
     const GFGfetchAndSetData = async () => {
-      const res = await fetch(`/api/gfg?username=taufiq2fjol`);
-      const data = await res.json();
-      setGfg(data);
-      // console.log(data);
+      const res = await fetch(`/api/gfg?username=taufiq2fjol`)
+      const data = await res.json()
+      setGfg(data)
     }
-    GFGfetchAndSetData();
+    GFGfetchAndSetData()
 
-    //github
     const fetchAndSetDataGithub = async () => {
-      const res = await fetch('/api/github');
-      const data = await res.json();
-      setGithub(data);
-      console.log(data);
-      const totalContributions = data?.data?.user?.contributionsCollection?.contributionCalendar?.totalContributions;
+      const res = await fetch("/api/github")
+      const data = await res.json()
+      setGithub(data)
+      const totalContributions =
+        data?.data?.user?.contributionsCollection?.contributionCalendar
+          ?.totalContributions
       const timer = setInterval(() => {
-        setContibutions((prev) => {
-          if (prev < totalContributions) return prev + 7
-          return totalContributions;
-        })
-      }, 50)
-      return () => clearInterval(timer);
+        setContributions((prev) =>
+          prev < totalContributions ? prev + 7 : totalContributions
+        )
+      }, 40)
+      return () => clearInterval(timer)
     }
-
-    fetchAndSetDataGithub();
+    fetchAndSetDataGithub()
   }, [])
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden mt-36">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 animate-float">
-          <Code className="h-8 w-8 text-primary/30" />
-        </div>
-        <div className="absolute top-40 right-20 animate-float" style={{ animationDelay: "1s" }}>
-          <Trophy className="h-6 w-6 text-primary/20" />
-        </div>
-        <div className="absolute bottom-40 left-20 animate-float" style={{ animationDelay: "2s" }}>
-          <Target className="h-10 w-10 text-primary/25" />
-        </div>
-        <div className="absolute top-60 right-10 animate-float" style={{ animationDelay: "0.5s" }}>
-          <div className="w-4 h-4 bg-primary/20 rounded-full" />
-        </div>
-        <div className="absolute bottom-20 right-40 animate-float" style={{ animationDelay: "1.5s" }}>
-          <div className="w-6 h-6 bg-primary/15 rounded-full" />
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance">
-            Hi, I'm{" "}
-            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text">
+    <section
+      id="home"
+      className="min-h-screen flex flex-col items-center justify-center px-8 py-16"
+    >
+      <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-center gap-20">
+        
+        {/* Left: Profile Card */}
+        <div className="flex-shrink-0">
+          <div className="rounded-2xl p-6 max-w-sm text-center">
+            <Image
+              src={profilePic}
+              alt="Profile"
+              width={120}
+              height={120}
+              className="rounded-full mx-auto mb-4 shadow-lg"
+            />
+            <h2 className="text-2xl font-bold text-foreground">
               Taufiq Hassan
-            </span>
-          </h1>
+            </h2>
+            <p className="text-muted-foreground text-sm mb-6">
+              Full-stack Developer
+            </p>
 
-          <div className="text-lg sm:text-lg lg:text-xl text-muted-foreground mb-8 h-16 flex items-center justify-center">
-            <span className="font-mono border-r-2 border-primary pr-1">{typedText}</span>
-          </div>
-
-          <div className="mb-8 p-6 bg-card rounded-lg border border-border max-w-md mx-auto">
-            <div className="flex items-center justify-center gap-4">
-              {/* LeetCode Card */}
-    <a 
-      href="https://leetcode.com/tfq21" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="flex items-center justify-center hover:scale-105 transition-transform"
-    >
-      <div className="m-1">
-        <Image src={leetCodeLogo} alt="LeetCode Logo" width={50} height={50} />
-      </div>
-      <div>
-        <div className="text-3xl font-bold text-primary">{problemsSolved}</div>
-        <div className="text-sm text-muted-foreground">Problems Solved</div>
-        <div className="text-sm opacity-50 text-muted-foreground">on LeetCode</div>
-      </div>
-    </a>
-
-    {/* GitHub Card */}
-    <a 
-      href="https://github.com/toffee-k21" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="flex items-center justify-center hover:scale-105 transition-transform"
-    >
-      <div className="m-1">
-        <Image src={githubLogo} alt="GitHub Logo" width={42} height={42} />
-      </div>
-      <div>
-        <div className="text-3xl font-bold text-primary">{contibutions}</div>
-        <div className="text-sm text-muted-foreground">GitHub Contributions</div>
-        <div className="text-sm opacity-50 text-muted-foreground">last 12 months</div>
-      </div>
-    </a>
-
+            {/* Social Links */}
+            <div className="flex justify-center gap-4">
+              <a href="https://github.com/toffee-k21" target="_blank">
+                <div className="p-2 rounded-md bg-card hover:scale-110 transition">
+                  <Github className="h-5 w-5 text-foreground" />
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/taufiq-hassan-311221295" target="_blank">
+                <div className="p-2 rounded-md bg-card hover:scale-110 transition">
+                  <Linkedin className="h-5 w-5 text-foreground" />
+                </div>
+              </a>
+              <a href="mailto:taufiq@example.com" target="_blank">
+                <div className="p-2 rounded-md bg-card hover:scale-110 transition">
+                  <Mail className="h-5 w-5 text-foreground" />
+                </div>
+              </a>
+              <a href="https://leetcode.com/tfq21" target="_blank">
+                <div className="p-2 rounded-md bg-card hover:scale-110 transition">
+                  <Book className="h-5 w-5 text-foreground" />
+                </div>
+              </a>
             </div>
           </div>
+        </div>
 
-          <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto text-pretty">
-          {/* Building scalable solutions at the intersection of Cloud/DevOps, Web Development, and Blockchain while strengthening my problem-solving skills on LeetCode, CodeChef, and GeeksforGeeks */}
+        {/* Divider Line */}
+        <motion.div
+          className="hidden lg:block w-px bg-gray-300 self-stretch"
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        ></motion.div>
+
+        {/* Right: Main Content */}
+        <motion.div
+          className="flex-1 max-w-2xl text-left"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-foreground mb-4">
+            Hi, I’m <span className="text-primary">Taufiq Hassan</span>
+          </h1>
+
+          {/* Typing Text */}
+          <p className="text-muted-foreground text-lg sm:text-xl mb-6 h-14">
+            {typedText}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <a
-              href="https://drive.google.com/file/d/1gz37EBYkmAxUs7XlTQXq9HPy95p32f1v/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-start mb-10">
+            <Button size="lg" className="px-8 py-3">
+              Contact Me
+            </Button>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="px-8 py-3"
+              asChild
             >
-              <Button size="lg" className="animate-glow text-lg px-8 py-3">
+              <a
+                href="https://drive.google.com/file/d/1gz37EBYkmAxUs7XlTQXq9HPy95p32f1v/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View Resume
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
-        </div>
-      </div>
-      <div>
-      <TechFlow />
+
+          {/* Stats */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-start">
+            <div className="flex-1 p-6 bg-card rounded-xl shadow-md text-center">
+              <Image
+                src={githubLogo}
+                alt="GitHub Logo"
+                width={36}
+                height={36}
+                className="mx-auto mb-2"
+              />
+              <div className="text-2xl font-bold text-primary">
+                {contributions}
+              </div>
+              <p className="text-sm text-muted-foreground">
+                GitHub Contributions
+              </p>
+              <p className="text-xs opacity-60">Last 12 months</p>
+            </div>
+
+            <div className="flex-1 p-6 bg-card rounded-xl shadow-md text-center">
+              <Image
+                src={leetCodeLogo}
+                alt="LeetCode Logo"
+                width={36}
+                height={36}
+                className="mx-auto mb-2"
+              />
+              <div className="text-2xl font-bold text-primary">
+                {problemsSolved}+
+              </div>
+              <p className="text-sm text-muted-foreground">
+                LeetCode Problems Solved
+              </p>
+              <p className="text-xs opacity-60">All-time</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
