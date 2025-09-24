@@ -26,16 +26,16 @@ const skillTimeline = [
     date: "Jan 2024",
     title: "Modern Frontend",
     description: "Learned React & Next.js for building scalable apps.",
-    skills: ["React", "Next.js", "GraphQl"],
-    icons: ["/icons/react.png", "/icons/nextjs.png", "/icons/graphql.png"],
+    skills: ["React", "Next.js","Redux", "GraphQl"],
+    icons: ["/icons/react.png", "/icons/nextjs.png", "/icons/redux.png", "/icons/graphql.png"],
     anecdote: "Created SEO-optimized apps with Next.js",
   },
   {
     date: "Apr 2024",
     title: "Blockchain Development",
     description: "Explored blockchain concepts and smart contracts.",
-    skills: ["Ethereum", "Solidity", "Ethers.js"],
-    icons: ["/icons/ethereum.png", "/icons/solidity.png", "/icons/metamask.svg"],
+    skills: ["Ethereum", "Solidity", "Ethers.js", "Crypto-Wallet", "Remix IDE", "Hardhat"],
+    icons: ["/icons/ethereum.png", "/icons/solidity.png","/icons/ethers.png", "/icons/metamask.svg", "/icons/remix.png", "/icons/hardhat.png"],
     anecdote: "Deployed smart contracts on Ethereum testnet",
   },
   {
@@ -179,7 +179,7 @@ export function SkillsSection() {
           <h3 className="text-2xl font-semibold text-center mb-8 text-foreground">
             Also Explored
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-items-center">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-6 justify-items-center">
             {alsoExplored.map((tech, i) => (
               <motion.div
                 key={tech.name}
