@@ -180,7 +180,13 @@ export function HeroSection() {
 
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="p-6 bg-card rounded-xl shadow-md text-center">
+            {/* GitHub Contributions */}
+            <a
+              href="https://github.com/toffee-k21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 bg-card rounded-xl shadow-md text-center hover:scale-105 transition-transform"
+            >
               <Image
                 src={githubLogo}
                 alt="GitHub Logo"
@@ -195,9 +201,15 @@ export function HeroSection() {
                 GitHub Contributions
               </p>
               <p className="text-xs opacity-60">Last 12 months</p>
-            </div>
+            </a>
 
-            <div className="p-6 bg-card rounded-xl shadow-md text-center">
+            {/* Problems Solved */}
+            <a
+              href="https://codolio.com/profile/Taufiq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 bg-card rounded-xl shadow-md text-center hover:scale-105 transition-transform"
+            >
               <Image
                 src={leetCodeLogo}
                 alt="LeetCode Logo"
@@ -212,8 +224,9 @@ export function HeroSection() {
                 Problems Solved
               </p>
               <p className="text-xs opacity-60">All-time</p>
-            </div>
+            </a>
           </div>
+
         </motion.div>
       </div>
     </section>
