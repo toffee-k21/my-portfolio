@@ -43,7 +43,7 @@ const skillTimeline = [
     title: "Cloud Computing",
     description: "Worked with AWS cloud services.",
     skills: ["AWS EC2", "S3", "Lambda"],
-    icons: ["/icons/aws.png", "/icons/ec2.png", "/icons/lambda.png"],
+    icons: ["/icons/aws.png", "/icons/ec2.png", "/icons/lambda.jpg"],
     anecdote: "Deployed scalable apps on the cloud",
   },
   {

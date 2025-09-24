@@ -12,7 +12,8 @@ import { motion } from "framer-motion"
 
 export function HeroSection() {
   const [typedText, setTypedText] = useState("")
-  const [problemsSolved, setProblemsSolved] = useState(0)
+  const [leetcodeSolved, setLeetcodeSolved] = useState(0)
+  const [gfgSolved, setGfgSolved] = useState(0)
   const [contributions, setContributions] = useState(0)
 
   const { setLeetcode, setGithub, setGfg } = useAppContext()
@@ -38,13 +39,14 @@ export function HeroSection() {
       const res = await fetch("https://leetcode-stats-api.herokuapp.com/tfq21")
       const data = await res.json()
       setLeetcode(data)
+      // Leetcode
       const totalSolved = data.totalSolved
-      const timer = setInterval(() => {
-        setProblemsSolved((prev) =>
+      const leetTimer = setInterval(() => {
+        setLeetcodeSolved((prev) =>
           prev < totalSolved ? prev + 7 : totalSolved
         )
       }, 40)
-      return () => clearInterval(timer)
+      return () => clearInterval(leetTimer)
     }
     fetchAndSetData()
 
@@ -52,6 +54,13 @@ export function HeroSection() {
       const res = await fetch(`/api/gfg?username=taufiq2fjol`)
       const data = await res.json()
       setGfg(data)
+      const totalSolved = data.info.totalProblemsSolved
+      const gfgTimer = setInterval(() => {
+        setGfgSolved((prev) =>
+          prev < totalSolved ? prev + 7 : totalSolved
+        )
+      }, 40)
+      return () => clearInterval(gfgTimer)
     }
     GFGfetchAndSetData()
 
@@ -195,10 +204,10 @@ export function HeroSection() {
                 className="mx-auto mb-2"
               />
               <div className="text-2xl font-bold text-primary">
-                {problemsSolved}+
+                {leetcodeSolved + gfgSolved}+
               </div>
               <p className="text-sm text-muted-foreground">
-                LeetCode Problems Solved
+                Problems Solved
               </p>
               <p className="text-xs opacity-60">All-time</p>
             </div>
