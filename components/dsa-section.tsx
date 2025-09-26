@@ -70,6 +70,7 @@ export function DSASection() {
       acceptanceRate: leetcode?.acceptanceRate,
       color: "bg-orange-500",
       recent: ["Two Sum", "Valid Parentheses", "Merge Two Sorted Lists"],
+      url:"https://leetcode.com/tfq21"
     },
     {
       name: "GeeksforGeeks",
@@ -85,6 +86,7 @@ export function DSASection() {
       acceptanceRate: 61.0,
       color: "bg-green-500",
       recent: ["Graph Algorithms", "Tree Traversal", "Sorting Techniques"],
+      url:"https://www.geeksforgeeks.org/user/taufiq2fjol/"
     },
     {
       name: "CodeChef",
@@ -121,6 +123,12 @@ export function DSASection() {
         {/* Progress Overview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {platforms.map((platform, index) => (
+              <a
+              key={index}
+              href={platform.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
             <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
@@ -129,66 +137,66 @@ export function DSASection() {
                 </div>
               </CardHeader>
               <CardContent>
-  <div className="space-y-4">
-    {/* Progress Bar */}
-    <div>
-      <div className="flex justify-between text-sm mb-1">
-        <span>Progress</span>
-        <span>
-          {platform.solved}/{platform.total}
-        </span>
-      </div>
-      <div className="w-full bg-secondary rounded-full h-2">
-        <div
-          className={`h-2 rounded-full ${platform.color}`}
-          style={{ width: `${(platform.solved / platform.total) * 100}%` }}
-        />
-      </div>
-    </div>
+                <div className="space-y-4">
+                  {/* Progress Bar */}
+                  <div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span>Progress</span>
+                      <span>
+                        {platform.solved}/{platform.total}
+                      </span>
+                    </div>
+                    <div className="w-full bg-secondary rounded-full h-2">
+                      <div
+                        className={`h-2 rounded-full ${platform.color}`}
+                        style={{ width: `${(platform.solved / platform.total) * 100}%` }}
+                      />
+                    </div>
+                  </div>
 
-    {/* Easy/Medium/Hard */}
-    <div className="grid grid-cols-3 gap-2 text-center text-xs">
-      <div className="p-2 rounded bg-muted">
-        <p className="font-semibold text-green-600">Easy</p>
-        <p>
-          {platform.easySolved}/{platform.totalEasy}
-        </p>
-      </div>
-      <div className="p-2 rounded bg-muted">
-        <p className="font-semibold text-yellow-600">Medium</p>
-        <p>
-          {platform.mediumSolved}/{platform.totalMedium}
-        </p>
-      </div>
-      <div className="p-2 rounded bg-muted">
-        <p className="font-semibold text-red-600">Hard</p>
-        <p>
-          {platform.hardSolved}/{platform.totalHard}
-        </p>
-      </div>
-    </div>
+                  {/* Easy/Medium/Hard */}
+                  <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                    <div className="p-2 rounded bg-muted">
+                      <p className="font-semibold text-green-600">Easy</p>
+                      <p>
+                        {platform.easySolved}/{platform.totalEasy}
+                      </p>
+                    </div>
+                    <div className="p-2 rounded bg-muted">
+                      <p className="font-semibold text-yellow-600">Medium</p>
+                      <p>
+                        {platform.mediumSolved}/{platform.totalMedium}
+                      </p>
+                    </div>
+                    <div className="p-2 rounded bg-muted">
+                      <p className="font-semibold text-red-600">Hard</p>
+                      <p>
+                        {platform.hardSolved}/{platform.totalHard}
+                      </p>
+                    </div>
+                  </div>
 
-    {/* Ranking + Acceptance */}
-    <div className="flex justify-between text-xs text-muted-foreground">
-      <span>Ranking: <b>{platform.ranking}</b></span>
-      <span>Acceptance: <b>{platform.acceptanceRate}%</b></span>
-    </div>
+                  {/* Ranking + Acceptance */}
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>Ranking: <b>{platform.ranking}</b></span>
+                    <span>Acceptance: <b>{platform.acceptanceRate}%</b></span>
+                  </div>
 
-    {/* Recent Problems */}
-    <div>
-      <p className="text-sm font-medium mb-2">Recent Solves:</p>
-      <div className="flex flex-wrap gap-2">
-        {platform.recent.map((problem, i) => (
-          <Badge key={i} variant="secondary" className="text-xs">
-            {problem}
-          </Badge>
-        ))}
-      </div>
-    </div>
-  </div>
-</CardContent>
-
+                  {/* Recent Problems */}
+                  <div>
+                    <p className="text-sm font-medium mb-2">Recent Solves:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {platform.recent.map((problem, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">
+                          {problem}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
+            </a>
           ))}
         </div>
 

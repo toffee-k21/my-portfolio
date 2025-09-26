@@ -16,7 +16,7 @@ export function HeroSection() {
   const [gfgSolved, setGfgSolved] = useState(0)
   const [contributions, setContributions] = useState(0)
 
-  const { setLeetcode, setGithub, setGfg } = useAppContext()
+  const { setLeetcode, setGithub, setGfg, leetcode } = useAppContext()
 
   const fullText =
     "Full-stack developer creating scalable Cloud, Web & Blockchain solutions with strong DSA skills"
@@ -36,9 +36,14 @@ export function HeroSection() {
   // fetch stats
   useEffect(() => {
     const fetchAndSetData = async () => {
-      const res = await fetch("https://leetcode-stats-api.herokuapp.com/tfq21")
-      const data = await res.json()
-      setLeetcode(data)
+      const res = await fetch("https://leetcode-stats-api.herokuapp.com/tfq21");
+      const resBadge = await fetch("https://alfa-leetcode-api.onrender.com/tfq21/badges");
+      const data = await res.json();
+      const dataBadge = await resBadge.json();
+      const inBadge = dataBadge.badges;
+      data["badges"] = inBadge;
+      console.log(data);
+      setLeetcode(data);
       const totalSolved = data.totalSolved
       const leetTimer = setInterval(() => {
         setLeetcodeSolved((prev) =>
@@ -178,54 +183,66 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* GitHub Contributions */}
-            <a
-              href="https://github.com/toffee-k21"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-6 bg-card rounded-xl shadow-md text-center hover:scale-105 transition-transform"
-            >
-              <Image
-                src={githubLogo}
-                alt="GitHub Logo"
-                width={36}
-                height={36}
-                className="mx-auto mb-2"
-              />
-              <div className="text-2xl sm:text-3xl font-bold text-primary">
-                {contributions}
-              </div>
-              <p className="text-sm sm:text-base text-muted-foreground">
-                GitHub Contributions
-              </p>
-              <p className="text-xs opacity-60">Last 12 months</p>
-            </a>
+       
+        {/* Stats Container */}
+        <div className="flex flex-col lg:flex-row gap-12 justify-start mt-8 w-full max-w-2xl mx-auto">
 
-            {/* Problems Solved */}
+          {/* Left Column: Problem Solved & GitHub Contributions */}
+          <div className="flex flex-col gap-4">
+            {/* Problem Solved Card */}
             <a
               href="https://codolio.com/profile/Taufiq"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 bg-card rounded-xl shadow-md text-center hover:scale-105 transition-transform"
+              className="p-4 bg-card rounded-xl shadow-md hover:scale-105 transition-transform w-72 flex items-center gap-4"
             >
               <Image
                 src={leetCodeLogo}
                 alt="LeetCode Logo"
-                width={36}
-                height={36}
-                className="mx-auto mb-2"
+                width={48}
+                height={48}
+                className="rounded"
               />
-              <div className="text-2xl sm:text-3xl font-bold text-primary">
-                {leetcodeSolved + gfgSolved}+
+              <div className="flex flex-col">
+                <div className="text-2xl sm:text-3xl font-bold text-primary">{leetcodeSolved + gfgSolved}+</div>
+                <p className="text-sm text-muted-foreground">Problems Solved</p>
               </div>
-              <p className="text-sm sm:text-base text-muted-foreground">
-                Problems Solved
-              </p>
-              <p className="text-xs opacity-60">All-time</p>
+            </a>
+
+            {/* GitHub Contributions Card */}
+            <a
+              href="https://github.com/toffee-k21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-card rounded-xl shadow-md hover:scale-105 transition-transform w-72 flex items-center gap-4"
+            >
+              <Image
+                src={githubLogo}
+                alt="GitHub Logo"
+                width={48}
+                height={48}
+                className="rounded"
+              />
+              <div className="flex flex-col">
+                <div className="text-2xl sm:text-3xl font-bold text-primary">{contributions}</div>
+                <p className="text-sm text-muted-foreground">GitHub Contributions</p>
+              </div>
             </a>
           </div>
+
+          {/* Right Column: Badges */}
+          <div className="flex flex-wrap gap-3 items-start">
+            {leetcode?.badges?.map((badge: any, index: number) => (
+              <Image
+                key={index}
+                src={badge.icon}
+                alt={badge.name || "LeetCode Badge"}
+                width={70} // bigger
+                height={70} // bigger
+              />
+            ))}
+          </div>
+        </div>
 
         </motion.div>
       </div>
