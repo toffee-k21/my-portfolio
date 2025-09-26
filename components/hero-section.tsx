@@ -35,54 +35,63 @@ export function HeroSection() {
 
   // fetch stats
   useEffect(() => {
-    const fetchAndSetData = async () => {
+    let leetTimer: any, gfgTimer: any, githubTimer: any;
+    const fetchLeet = async () => {
       const res = await fetch("https://leetcode-stats-api.herokuapp.com/tfq21");
+      const data = await res?.json();
+      try{
       const resBadge = await fetch("https://alfa-leetcode-api.onrender.com/tfq21/badges");
-      const data = await res.json();
-      const dataBadge = await resBadge.json();
+      const dataBadge = await resBadge?.json();
       const inBadge = dataBadge.badges;
       data["badges"] = inBadge;
-      console.log(data);
+      } catch(e){
+        console.log("badge fetch errro");
+      }
       setLeetcode(data);
       const totalSolved = data.totalSolved
-      const leetTimer = setInterval(() => {
+      leetTimer = setInterval(() => {
         setLeetcodeSolved((prev) =>
           prev < totalSolved ? prev + 7 : totalSolved
         )
       }, 40)
-      return () => clearInterval(leetTimer)
     }
-    fetchAndSetData()
 
-    const GFGfetchAndSetData = async () => {
+    const fetchGFG = async () => {
       const res = await fetch(`/api/gfg?username=taufiq2fjol`)
       const data = await res.json()
       setGfg(data)
       const totalSolved = data.info.totalProblemsSolved
-      const gfgTimer = setInterval(() => {
+       gfgTimer = setInterval(() => {
         setGfgSolved((prev) =>
           prev < totalSolved ? prev + 7 : totalSolved
         )
       }, 40)
       return () => clearInterval(gfgTimer)
     }
-    GFGfetchAndSetData()
 
-    const fetchAndSetDataGithub = async () => {
+    const fetchGitHub = async () => {
       const res = await fetch("/api/github")
       const data = await res.json()
       setGithub(data)
       const totalContributions =
         data?.data?.user?.contributionsCollection?.contributionCalendar
           ?.totalContributions
-      const timer = setInterval(() => {
+      githubTimer = setInterval(() => {
         setContributions((prev) =>
           prev < totalContributions ? prev + 7 : totalContributions
         )
       }, 40)
-      return () => clearInterval(timer)
     }
-    fetchAndSetDataGithub()
+
+    fetchLeet();
+    fetchGFG();
+    fetchGitHub();
+  
+    return () => {
+      clearInterval(leetTimer);
+      clearInterval(gfgTimer);
+      clearInterval(githubTimer);
+    };
   }, [])
 
   return (

@@ -19,7 +19,6 @@ export async function POST(req: Request) {
         pass: process.env.EMAIL_PASS,
       },
     })
-
     // VERIFY connection/auth — useful for debugging
     try {
       await transporter.verify()
