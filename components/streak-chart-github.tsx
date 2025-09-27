@@ -29,8 +29,9 @@ const SteakChartGithub = ({ weeks }: any) => {
       <CardContent>
         <div className="w-full flex justify-center">
           {/* Scrollable container */}
-          <div ref={scrollRef} className="flex gap-2 overflow-x-auto scrollbar-none">
-            
+          <div ref={scrollRef}
+            className="flex gap-2 overflow-x-auto overflow-y-hidden scrollbar-hide">
+
             {/* Day labels column */}
             <div className="flex flex-col gap-2 mr-2">
               {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((dayLabel) => (

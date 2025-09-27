@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { CardContent } from './ui/card'
 import Image from 'next/image'
 import leetcodeLogo from  "../public/icons/leetcode.png"
+import { Scrollbar } from '@radix-ui/react-scroll-area'
 
 // --- Heatmap intensity ---
 const getColorClass = (count: number) => {
@@ -31,7 +32,7 @@ const SteakChart = ({ weeks }: any) => {
           {/* Scrollable container */}
           <div
             ref={scrollRef}
-            className="flex gap-2 overflow-x-auto scrollbar-none"
+            className="flex gap-2 overflow-x-auto overflow-y-hidden scrollbar-hide"
           >
             {/* Day labels */}
             <div className="flex flex-col gap-2 mr-2">
