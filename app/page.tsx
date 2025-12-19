@@ -48,7 +48,7 @@ function App() {
                   Full-Stack Cloud Engineer building scalable real-time systems
                 </h2>
                 <p className="text-lg text-secondary-text max-w-2xl">
-                  Founder of Velyx, a real-time SaaS platform. Specializing in cloud-native architectures,
+                  Building Velyx, a real-time SaaS platform. Specializing in cloud-native architectures,
                   WebSocket infrastructure, and production-grade distributed systems.
                 </p>
               </div>
@@ -142,7 +142,7 @@ function App() {
               </h3>
               <h2 className="text-4xl text-foreground">Velyx</h2>
               <p className="text-xl text-secondary-text">
-                Real-time collaboration platform for distributed teams
+                A managed real-time event delivery layer for modern applications
               </p>
             </div>
 
@@ -157,15 +157,37 @@ function App() {
 
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <h4 className="text-foreground">The Challenge</h4>
+                  <h4 className="text-foreground">The Problem</h4>
                   <p className="text-secondary-text leading-relaxed">
-                    Modern teams need instant synchronization across documents, presence awareness, and
-                    low-latency updates without browser refreshes. Traditional request-response patterns
-                    can't deliver this experience at scale.
+                    <div>
+                      Modern applications increasingly rely on real-time updates — notifications, live state, presence, and streaming events.
+                    </div>
+                    <div>
+                      Building and maintaining WebSocket infrastructure at scale introduces significant complexity:
+                      connection lifecycle management, reconnections, routing, fan-out, and horizontal scaling are hard to get right and expensive to maintain.
+                    </div>
+                    <div>
+                      Most teams end up re-implementing similar real-time layers for every product.
+                    </div>
                   </p>
                 </div>
 
                 <div className="space-y-4">
+                  <h4 className="text-foreground">What Velyx Provides</h4>
+                  <p className="text-secondary-text leading-relaxed">
+                    <div>
+                      Velyx is a fully managed real-time infrastructure layer that removes this complexity.
+                    </div>
+                    <div>
+                      It allows backend services to publish events and ensures they are delivered instantly to connected clients — without application teams needing to manage WebSocket servers, scaling logic, or message routing.
+                    </div>
+                    <div>
+                      Velyx focuses on simplicity, reliability, and developer experience.
+                    </div>
+                  </p>
+                </div>
+
+                {/* <div className="space-y-4">
                   <h4 className="text-foreground">Technical Approach</h4>
                   <ul className="space-y-3 text-secondary-text">
                     <li className="flex items-start gap-3">
@@ -193,19 +215,11 @@ function App() {
                       <span>Docker containerization with NGINX reverse proxy</span>
                     </li>
                   </ul>
-                </div>
-
-                <div className="space-y-4">
-                  <h4 className="text-foreground">Impact</h4>
-                  <p className="text-secondary-text leading-relaxed">
-                    Deployed to production serving 2,000+ concurrent connections with sub-100ms message
-                    latency. System maintains 99.9% uptime with automated health checks and graceful degradation.
-                  </p>
-                </div>
+                </div> */}
 
                 <div className="flex flex-wrap gap-3 pt-2">
                   <a
-                    href="https://velyx.example.com"
+                    href="https://velyx.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-primary-foreground rounded-lg hover:bg-accent-hover transition-colors"
@@ -214,7 +228,7 @@ function App() {
                     Live Product
                   </a>
                   <a
-                    href="https://github.com/toffee-k21/velyx"
+                    href="https://github.com/toffee-k21/velyx-docs"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground rounded-lg hover:bg-muted transition-colors"
