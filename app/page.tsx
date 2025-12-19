@@ -1,3 +1,4 @@
+'use client'
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Header } from './components/Header';
@@ -73,7 +74,7 @@ function App() {
             <div className="flex justify-center md:justify-end">
               <div className="w-64 h-64 rounded-2xl overflow-hidden border border-card-border shadow-lg">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1562228802-4b1052d0f845?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NjA3NDc3N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="/profile.png"
                   alt="Taufiq Hassan"
                   className="w-full h-full object-cover"
                 />
