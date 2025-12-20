@@ -148,11 +148,13 @@ function App() {
 
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="rounded-xl overflow-hidden border border-card-border shadow-xl">
-                <ImageWithFallback
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ParOnAPcAVY?si=doxHut7PsI6_EpqW" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+
+                {/* <ImageWithFallback
                   src="https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzY2MTIwNTMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Velyx Dashboard"
                   className="w-full h-full object-cover"
-                />
+                /> */}
               </div>
 
               <div className="space-y-6">
