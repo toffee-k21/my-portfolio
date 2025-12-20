@@ -142,7 +142,7 @@ function App() {
               </h3>
               <h2 className="text-4xl text-foreground">Velyx</h2>
               <p className="text-xl text-secondary-text">
-                A managed real-time event delivery layer for modern applications
+                Infrastructure for Building Real-Time Applications
               </p>
             </div>
 
@@ -159,60 +159,24 @@ function App() {
 
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <h4 className="text-foreground">The Problem</h4>
+                  <h4 className="text-foreground text-xl">About Velyx</h4>
+                    <div className='mb-4 text-white/80'>
+                       Built to abstract real-time complexity into a simple, predictable API for backend teams.
+                    </div>
                   <div className="text-secondary-text leading-relaxed">
                     <div className='mb-4'>
-                      Modern applications heavly rely on real-time updates like notifications, presence, and live state
+                      Velyx is a managed real-time infrastructure layer that lets backend services publish events and instantly deliver them to connected clients - without managing WebSocket servers or routing logic.
                     </div>
-                    <div className='mb-4'>
-                      Building and scaling reliable real-time infrastructure is hard — managing persistent connections, reconnections, routing, and scale adds significant operational complexity.
-                    </div>
-                    <div>
-                      Teams often end up rebuilding the same real-time systems for every application.
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h4 className="text-foreground">What Velyx Provides</h4>
-                  <div className="text-secondary-text leading-relaxed">
-                    <div className='mb-4'>
-                      Velyx is a fully managed real-time infrastructure layer that removes this complexity.
-                    </div>
-                    <div className='mb-4'>
-                      Backend services publish events, and Velyx delivers them instantly to connected clients — without teams managing WebSocket servers, scaling logic, or message routing.
+                    {/* <div className='mb-4'>
+                      It’s designed to simplify real-time delivery while remaining predictable, reliable, and easy to operate
+                    </div> */}
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Express</span>
+                      <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Redis Pub/Sub</span>
+                      <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Docker</span>
+                      <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">MongoDB</span>
                     </div>
                   </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h4 className="text-foreground">Built With</h4>
-                  <ul className="space-y-3 text-secondary-text">
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent mt-1">•</span>
-                      <span>WebSockets & event-driven architecture</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Stateless backend services</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Authenticated publish/subscribe model</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Cloud-native deployment (AWS)</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent mt-1">•</span>
-                      <span>PostgreSQL with read replicas and connection pooling (PgBouncer)</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Docker containerization with NGINX reverse proxy</span>
-                    </li>
-                  </ul>
                 </div>
 
                 <div className="flex flex-wrap gap-3 pt-2">
@@ -294,27 +258,26 @@ function App() {
               <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
                 <div className="aspect-video rounded-lg overflow-hidden border border-card-border">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1586762257936-c5aa8e15b49b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGluZnJhc3RydWN0dXJlJTIwbmV0d29ya3xlbnwxfHx8fDE3NjYxMjQ5ODV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="/PRAXIS.png"
                     alt="Microservices Orchestrator"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h4 className="text-foreground">Microservices Orchestrator</h4>
+                <h4 className="text-foreground">PRAXIS</h4>
                 <p className="text-secondary-text">
-                  Service mesh for 15+ microservices with automated deployment, circuit breakers,
-                  and distributed tracing. Reduced deployment time by 70% with zero-downtime releases.
+                  PRAXIS is a modern peer-to-peer mock interview platform built for students and developers preparing for placements & tech interviews.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Docker</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Kubernetes</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Istio</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Prometheus</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Web-RTC</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">TurboRepo</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Next</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Redis Pub/Sub</span>
                 </div>
                 <div className="flex gap-3 pt-2">
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                  {/* <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     Case Study <ExternalLink className="w-3 h-3" />
-                  </a>
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                  </a> */}
+                  <a href="https://github.com/toffee-k21/praxis" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     GitHub <Github className="w-3 h-3" />
                   </a>
                 </div>
@@ -537,7 +500,8 @@ function App() {
               education, and references.
             </p>
             <a
-              href="/taufiq-resume.pdf"
+              href="https://drive.google.com/file/d/12TSLXMuN4BShMGriMPUQbErJwfwi664u/view?usp=drive_link"
+              target="_blank"
               download
               className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-primary-foreground rounded-lg hover:bg-accent-hover transition-colors"
             >
