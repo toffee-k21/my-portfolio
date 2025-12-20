@@ -158,53 +158,49 @@ function App() {
               <div className="space-y-6">
                 <div className="space-y-4">
                   <h4 className="text-foreground">The Problem</h4>
-                  <p className="text-secondary-text leading-relaxed">
-                    <div>
-                      Modern applications increasingly rely on real-time updates — notifications, live state, presence, and streaming events.
+                  <div className="text-secondary-text leading-relaxed">
+                    <div className='mb-4'>
+                      Modern applications heavly rely on real-time updates like notifications, presence, and live state
+                    </div>
+                    <div className='mb-4'>
+                      Building and scaling reliable real-time infrastructure is hard — managing persistent connections, reconnections, routing, and scale adds significant operational complexity.
                     </div>
                     <div>
-                      Building and maintaining WebSocket infrastructure at scale introduces significant complexity:
-                      connection lifecycle management, reconnections, routing, fan-out, and horizontal scaling are hard to get right and expensive to maintain.
+                      Teams often end up rebuilding the same real-time systems for every application.
                     </div>
-                    <div>
-                      Most teams end up re-implementing similar real-time layers for every product.
-                    </div>
-                  </p>
+                  </div>
                 </div>
 
                 <div className="space-y-4">
                   <h4 className="text-foreground">What Velyx Provides</h4>
-                  <p className="text-secondary-text leading-relaxed">
-                    <div>
+                  <div className="text-secondary-text leading-relaxed">
+                    <div className='mb-4'>
                       Velyx is a fully managed real-time infrastructure layer that removes this complexity.
                     </div>
-                    <div>
-                      It allows backend services to publish events and ensures they are delivered instantly to connected clients — without application teams needing to manage WebSocket servers, scaling logic, or message routing.
+                    <div className='mb-4'>
+                      Backend services publish events, and Velyx delivers them instantly to connected clients — without teams managing WebSocket servers, scaling logic, or message routing.
                     </div>
-                    <div>
-                      Velyx focuses on simplicity, reliability, and developer experience.
-                    </div>
-                  </p>
+                  </div>
                 </div>
 
-                {/* <div className="space-y-4">
-                  <h4 className="text-foreground">Technical Approach</h4>
+                <div className="space-y-4">
+                  <h4 className="text-foreground">Built With</h4>
                   <ul className="space-y-3 text-secondary-text">
                     <li className="flex items-start gap-3">
                       <span className="text-accent mt-1">•</span>
-                      <span>WebSocket-first architecture with Redis pub/sub for horizontal scaling</span>
+                      <span>WebSockets & event-driven architecture</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent mt-1">•</span>
-                      <span>Operational transformation for conflict-free concurrent editing</span>
+                      <span>Stateless backend services</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent mt-1">•</span>
-                      <span>JWT-based authentication with refresh token rotation</span>
+                      <span>Authenticated publish/subscribe model</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent mt-1">•</span>
-                      <span>AWS Lambda + API Gateway for serverless REST endpoints</span>
+                      <span>Cloud-native deployment (AWS)</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent mt-1">•</span>
@@ -215,7 +211,7 @@ function App() {
                       <span>Docker containerization with NGINX reverse proxy</span>
                     </li>
                   </ul>
-                </div> */}
+                </div>
 
                 <div className="flex flex-wrap gap-3 pt-2">
                   <a
@@ -266,27 +262,27 @@ function App() {
               <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
                 <div className="aspect-video rounded-lg overflow-hidden border border-card-border">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1717996563514-e3519f9ef9f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbnxlbnwxfHx8fDE3NjYwMzkxODF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="/shrnk.png"
                     alt="CloudStream Analytics"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h4 className="text-foreground">CloudStream Analytics</h4>
+                <h4 className="text-foreground">SHRNK - Serverless URL compressor</h4>
                 <p className="text-secondary-text">
-                  Real-time data pipeline processing 50K events/second using Kafka, Apache Flink,
-                  and TimescaleDB. Built custom dashboards with React and WebSocket streaming.
+                  Architected a serverless engine using AWS Lambda and API Gateway, utilizing an event-driven model to
+                  achieve 100% serverless operation and cut idle costs to zero.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Kafka</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Flink</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">TimescaleDB</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">React</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Express</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">EJS</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">DynamoDB</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Lambda</span>
                 </div>
                 <div className="flex gap-3 pt-2">
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                  <a href="https://0lncazepdb.execute-api.ap-south-1.amazonaws.com/" target="_blank" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     View Project <ExternalLink className="w-3 h-3" />
                   </a>
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                  <a href="https://github.com/toffee-k21/shrnk" target="_blank" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     GitHub <Github className="w-3 h-3" />
                   </a>
                 </div>
