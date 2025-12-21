@@ -342,76 +342,110 @@ function App() {
         </div>
       </section>
 
-      {/* Technical Skills */}
-      <section className="py-20 px-6 border-t border-border bg-muted/30">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            transition={{ duration: 0.5 }}
-            className="space-y-12"
-          >
-            <div className="space-y-2">
-              <h3 className="text-sm uppercase tracking-wider text-secondary-text">
-                Technical Skills
-              </h3>
-              <h2 className="text-4xl text-foreground">Core Capabilities</h2>
-            </div>
+ {/* Technical Skills */}
+<section className="py-20 px-6 border-t border-border bg-muted/30">
+  <div className="max-w-4xl mx-auto">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeInUp}
+      transition={{ duration: 0.5 }}
+      className="space-y-14"
+    >
+      {/* Section Header */}
+      <div className="space-y-2">
+        <h3 className="text-sm uppercase tracking-wider text-secondary-text">
+          Technical Focus
+        </h3>
+        <h2 className="text-4xl text-foreground">
+          Engineering Skill Set
+        </h2>
+        <p className="text-secondary-text max-w-2xl">
+          Built and deployed multiple full-stack and cloud-native systems,
+          with a focus on real-time and event-driven architectures.
+        </p>
+      </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h4 className="text-foreground">Frontend</h4>
-                <p className="text-secondary-text leading-relaxed">
-                  React, Next.js, TypeScript, Tailwind CSS, Redux, React Query,
-                  Zustand, Vitest, Playwright
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="text-foreground">Backend</h4>
-                <p className="text-secondary-text leading-relaxed">
-                  Node.js, Express, NestJS, GraphQL, REST APIs, WebSockets,
-                  Socket.io, tRPC, Prisma, TypeORM
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="text-foreground">Cloud & Infrastructure</h4>
-                <p className="text-secondary-text leading-relaxed">
-                  AWS (EC2, Lambda, S3, RDS, API Gateway, CloudWatch),
-                  Docker, Kubernetes, Terraform, NGINX, Cloudflare
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="text-foreground">Data & Streaming</h4>
-                <p className="text-secondary-text leading-relaxed">
-                  PostgreSQL, MongoDB, Redis, Apache Kafka, RabbitMQ,
-                  TimescaleDB, Elasticsearch, DynamoDB
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="text-foreground">DevOps & Monitoring</h4>
-                <p className="text-secondary-text leading-relaxed">
-                  CI/CD (GitHub Actions, GitLab), Datadog, Grafana,
-                  Prometheus, Sentry, PagerDuty
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="text-foreground">Tools & Practices</h4>
-                <p className="text-secondary-text leading-relaxed">
-                  Git, Agile/Scrum, System Design, Microservices,
-                  Event-Driven Architecture, TDD, API Design
-                </p>
-              </div>
-            </div>
-          </motion.div>
+      {/* Core Stack */}
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-4">
+          <h4 className="text-foreground font-medium">Frontend (Core)</h4>
+          <p className="text-secondary-text leading-relaxed">
+            React, Next.js, TypeScript, Tailwind CSS
+          </p>
         </div>
-      </section>
+
+        <div className="space-y-4">
+          <h4 className="text-foreground font-medium">Backend (Core)</h4>
+          <p className="text-secondary-text leading-relaxed">
+            Node.js, Express, REST APIs, WebSockets(ws),
+            Authentication (JWT, OAuth)
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <h4 className="text-foreground font-medium">
+            Cloud & Infrastructure (Core)
+          </h4>
+          <p className="text-secondary-text leading-relaxed">
+            AWS (EC2, Lambda, API Gateway, S3, DynamoDB, CloudWatch),
+            Linux, Docker, NGINX, <br/>Kubernetes (fundamentals & architecture)
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <h4 className="text-foreground font-medium">
+            Data & Streaming
+          </h4>
+          <p className="text-secondary-text leading-relaxed">
+            PostgreSQL, MongoDB, Redis, Apache Kafka
+          </p>
+        </div>
+      </div>
+
+      {/* Extended Experience */}
+      <div className="pt-6 border-t border-border/60 grid md:grid-cols-2 gap-8">
+        <div className="space-y-4">
+          <h4 className="text-foreground font-medium">
+            Extended Experience
+          </h4>
+          <p className="text-secondary-text leading-relaxed">
+            Go, Django, Svelte / SvelteKit, EJS,
+            GraphQL (schema & query fundamentals), Prisma,
+            Apache Kafka (architecture & fundamentals)
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <h4 className="text-foreground font-medium">
+            DevOps & Engineering Practices
+          </h4>
+          <p className="text-secondary-text leading-relaxed">
+            CI/CD (GitHub Actions), Git,
+            System Design (LLD basics),
+            Microservices, Event-Driven Architecture
+          </p>
+        </div>
+      </div>
+
+      {/* Blockchain & Low-Level */}
+      <div className="pt-6 border-t border-border/60">
+        <div className="space-y-4">
+          <h4 className="text-foreground font-medium">
+            Blockchain & Low-Level Systems
+          </h4>
+          <p className="text-secondary-text leading-relaxed">
+            Ethereum (Solidity), ethers.js, MetaMask,
+            Smart Contracts, NFT marketplaces,
+            DSA & problem solving in C++
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Experience & Journey */}
       <section className="py-20 px-6 border-t border-border">
