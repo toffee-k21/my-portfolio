@@ -48,8 +48,9 @@ function App() {
                   Full-Stack Cloud Engineer building scalable real-time systems
                 </h2>
                 <p className="text-lg text-secondary-text max-w-2xl">
-                  Building Velyx, a real-time SaaS platform. Specializing in cloud-native architectures,
-                  WebSocket infrastructure, and production-grade distributed systems.
+                  Building Velyx, a real-time SaaS platform.
+                  Working across cloud-native architectures, real-time WebSocket systems,
+                  and scalability-driven system design.
                 </p>
               </div>
 
@@ -71,7 +72,12 @@ function App() {
               </div>
             </div>
 
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-between">
+               {/* Scroll Indicator */}
+              <div className="flex items-center gap-2 text-secondary-text opacity-60 select-none p-2">
+                <span className="text-xs tracking-wide">Scroll to explore</span>
+                <span className="text-sm animate-bounce">↓</span>
+              </div>
               <div className="w-64 h-64 rounded-2xl overflow-hidden border border-card-border shadow-lg">
                 <ImageWithFallback
                   src="/profile.png"
@@ -274,7 +280,7 @@ function App() {
                   <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Ethers.js</span>
                 </div>
                 <div className="flex gap-3 pt-2">
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                  <a href="https://nftorium.vercel.app/" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     Live Project<ExternalLink className="w-3 h-3" />
                   </a>
                   <a href="https://github.com/toffee-k21/NFTorium" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
@@ -399,7 +405,7 @@ function App() {
             Data & Streaming
           </h4>
           <p className="text-secondary-text leading-relaxed">
-            PostgreSQL, MongoDB, Redis, Apache Kafka
+            PostgreSQL, MongoDB, Redis
           </p>
         </div>
       </div>
