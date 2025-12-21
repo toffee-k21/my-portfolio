@@ -104,13 +104,22 @@ function App() {
             <h3 className="text-sm uppercase tracking-wider text-secondary-text">
               Overview
             </h3>
-            <p className="text-lg text-foreground leading-relaxed">
-              Full-stack engineer with deep expertise in cloud-native backend systems and real-time architectures.
-              I build production-ready SaaS platforms that prioritize scalability, performance, and maintainability.
-              My work spans from WebSocket infrastructure and distributed event streaming to serverless deployment
-              and API design. I bring a product mindset to technical problems, ensuring systems are not just
-              functional but delight users and support business goals.
-            </p>
+            <div className="text-lg text-foreground leading-relaxed">
+              <p className='mb-2'>
+                Full-stack engineer who enjoys designing backend systems with a strong focus on
+                correctness, scalability, and long-term maintainability.
+              </p>
+              <p className='mb-2'>
+                I build production-oriented SaaS platforms by focusing on clear system boundaries,
+                failure modes, and operational simplicity. I care about well-defined APIs,
+                predictable real-time behavior, and architectures that can evolve without major
+                rewrites.
+              </p>
+              <p className='mb-2'>
+                I approach engineering with a product mindset — balancing technical decisions with
+                usability, performance, and real-world constraints.
+              </p>
+            </div>
 
             <div className="flex items-start gap-3 pt-4">
               <Award className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
