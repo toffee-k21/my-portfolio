@@ -256,6 +256,35 @@ function App() {
 
               {/* Project 2 */}
               <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
+                <div className="aspect-video rounded-lg overflow-hidden border border-card-border bg-muted flex items-center justify-center">
+                  <ImageWithFallback
+                    src="/NFTorium.png"
+                    alt="CloudStream Analytics"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h4 className="text-foreground">NFTorium</h4>
+                <p className="text-secondary-text">
+                  NFTorium is your gateway to the world of digital art and collectibles! Built on the Sepolia Ethereum Testnet, NFTorium is a decentralized marketplace where users can mint, buy, sell, and trade NFTs effortlessly. 
+                </p>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">React</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Javascript</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Solidity</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Ethers.js</span>
+                </div>
+                <div className="flex gap-3 pt-2">
+                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                    Live Project<ExternalLink className="w-3 h-3" />
+                  </a>
+                  <a href="https://github.com/toffee-k21/NFTorium" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                    GitHub <Github className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Project 3 */}
+              <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
                 <div className="aspect-video rounded-lg overflow-hidden border border-card-border">
                   <ImageWithFallback
                     src="/PRAXIS.png"
@@ -278,32 +307,6 @@ function App() {
                     Case Study <ExternalLink className="w-3 h-3" />
                   </a> */}
                   <a href="https://github.com/toffee-k21/praxis" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
-                    GitHub <Github className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Project 3 */}
-              <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
-                <div className="aspect-video rounded-lg overflow-hidden border border-card-border bg-muted flex items-center justify-center">
-                  <code className="text-accent">{"{ API }"}</code>
-                </div>
-                <h4 className="text-foreground">GraphQL Federation Gateway</h4>
-                <p className="text-secondary-text">
-                  Unified API layer aggregating 8 backend services with intelligent caching,
-                  rate limiting, and request batching. Achieved 40% reduction in API calls.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">GraphQL</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Apollo</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Redis</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Node.js</span>
-                </div>
-                <div className="flex gap-3 pt-2">
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
-                    Documentation <ExternalLink className="w-3 h-3" />
-                  </a>
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     GitHub <Github className="w-3 h-3" />
                   </a>
                 </div>
