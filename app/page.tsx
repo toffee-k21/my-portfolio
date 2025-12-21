@@ -447,73 +447,108 @@ function App() {
 </section>
 
 
-      {/* Experience & Journey */}
-      <section className="py-20 px-6 border-t border-border">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            transition={{ duration: 0.5 }}
-            className="space-y-12"
-          >
-            <div className="space-y-2">
-              <h3 className="text-sm uppercase tracking-wider text-secondary-text">
-                Journey
-              </h3>
-              <h2 className="text-4xl text-foreground">Professional Evolution</h2>
+{/* Experience & Involvement */}
+<section className="py-20 px-6 border-t border-border">
+  <div className="max-w-4xl mx-auto">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeInUp}
+      transition={{ duration: 0.5 }}
+      className="space-y-12"
+    >
+      {/* Section Header */}
+      <div className="space-y-2">
+        <h3 className="text-sm uppercase tracking-wider text-secondary-text">
+          Journey
+        </h3>
+        <h2 className="text-4xl text-foreground">
+          Experience & Involvement
+        </h2>
+      </div>
+
+      <div className="space-y-10">
+        {/* Velyx */}
+        <div className="space-y-3 pb-8 border-b border-border">
+          <div className="flex justify-between items-start">
+            <div>
+              <h4 className="text-foreground">Builder & Maintainer</h4>
+              <p className="text-secondary-text">Velyx</p>
             </div>
+            <span className="text-sm text-secondary-text">
+              2023 – Present
+            </span>
+          </div>
 
-            <div className="space-y-8">
-              <div className="space-y-3 pb-8 border-b border-border">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="text-foreground">Founder & Lead Engineer</h4>
-                    <p className="text-secondary-text">Velyx</p>
-                  </div>
-                  <span className="text-sm text-secondary-text">2023 – Present</span>
-                </div>
-                <p className="text-secondary-text leading-relaxed">
-                  Building a real-time collaboration SaaS from concept to production. Architected scalable
-                  WebSocket infrastructure, implemented authentication systems, and deployed to AWS with
-                  monitoring and CI/CD pipelines.
-                </p>
-              </div>
-
-              <div className="space-y-3 pb-8 border-b border-border">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="text-foreground">Backend Engineer</h4>
-                    <p className="text-secondary-text">TechFlow Systems</p>
-                  </div>
-                  <span className="text-sm text-secondary-text">2021 – 2023</span>
-                </div>
-                <p className="text-secondary-text leading-relaxed">
-                  Developed microservices for e-commerce platform handling 1M+ daily transactions.
-                  Built event-driven systems with Kafka, optimized database queries reducing latency by 60%,
-                  and mentored junior engineers.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="text-foreground">Full-Stack Developer</h4>
-                    <p className="text-secondary-text">StartupLab</p>
-                  </div>
-                  <span className="text-sm text-secondary-text">2019 – 2021</span>
-                </div>
-                <p className="text-secondary-text leading-relaxed">
-                  Shipped features across the stack for B2B SaaS products. Developed REST APIs,
-                  React dashboards, and integrated third-party services. Participated in system
-                  design reviews and sprint planning.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+          <p className="text-secondary-text leading-relaxed">
+            Designed and built a real-time collaboration platform from scratch.
+            Architected WebSocket-based event delivery, authentication, and cloud
+            deployment on AWS. Focused on correctness, scalability, and developer
+            experience.
+          </p>
         </div>
-      </section>
+
+        {/* Open Source */}
+        <div className="space-y-3 pb-8 border-b border-border">
+          <div className="flex justify-between items-start">
+            <div>
+              <h4 className="text-foreground">Open Source Contributor</h4>
+              <p className="text-secondary-text">AsyncAPI</p>
+            </div>
+            <span className="text-sm text-secondary-text">
+              Hacktoberfest 2024
+            </span>
+          </div>
+
+          <p className="text-secondary-text leading-relaxed">
+            Contributed to the AsyncAPI conference website and documentation
+            platform (Next.js). Delivered UI and content improvements through
+            multiple merged pull requests.
+          </p>
+
+          <a
+            href="https://github.com/asyncapi/conference-website/pulls?q=is%3Apr+is%3Amerged+author%3Atoffee-k21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm text-secondary-text underline underline-offset-4 hover:text-foreground transition"
+          >
+            View contributions →
+          </a>
+        </div>
+
+
+        {/* Tech Club Leadership */}
+        <div className="space-y-3">
+          <div className="flex justify-between items-start">
+            <div>
+              <h4 className="text-foreground">
+                Blockchain Coordinator
+              </h4>
+              <p className="text-secondary-text">
+                Innogeeks (Technical Club)
+              </p>
+            </div>
+            <span className="text-sm text-secondary-text">
+              2023 – Present
+            </span>
+          </div>
+
+          <p className="text-secondary-text leading-relaxed">
+            Led blockchain fundamentals sessions for students and club members.
+            Organized and coordinated technical events including the NASA Space
+            Apps Challenge (Ghaziabad). Mentored peers on Web3 and decentralized
+            application basics.
+          </p>
+
+          {/* Optional photo goes here */}
+          {/* <img ... /> */}
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Resume */}
       <section id="resume" className="py-20 px-6 border-t border-border bg-muted/30">
