@@ -12,6 +12,7 @@ import {
   Send
 } from 'lucide-react';
 import { ImageWithFallback } from './components/effect/ImageWithFallback';
+import { Contact } from './components/Contact';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -600,81 +601,7 @@ function App() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20 px-6 border-t border-border">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            transition={{ duration: 0.5 }}
-            className="space-y-12"
-          >
-            <div className="space-y-2 text-center">
-              <h3 className="text-sm uppercase tracking-wider text-secondary-text">
-                Get In Touch
-              </h3>
-              <h2 className="text-4xl text-foreground">Let's Connect</h2>
-              <p className="text-secondary-text max-w-xl mx-auto">
-                Open to full-time engineering roles, consulting opportunities, and technical discussions.
-                Available for remote or hybrid positions.
-              </p>
-            </div>
-
-            <div className="max-w-lg mx-auto space-y-6">
-              <div className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm text-foreground mb-2">
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-input-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm text-foreground mb-2">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-input-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm text-foreground mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={5}
-                    placeholder="Tell me about your project or opportunity..."
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-input-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent resize-none"
-                  />
-                </div>
-              </div>
-
-              <button className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-primary-foreground rounded-lg hover:bg-accent-hover transition-colors">
-                <Send className="w-4 h-4" />
-                Send Message
-              </button>
-
-              <p className="text-sm text-center text-secondary-text">
-                Or email directly at{' '}
-                <a href="mailto:taufiq2004.21@gmail.com" className="text-accent hover:text-accent-hover">
-                  taufiq2004.21@gmail.com
-                </a>
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <Contact />
 
       <Footer />
     </div>
