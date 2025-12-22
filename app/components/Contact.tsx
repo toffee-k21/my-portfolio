@@ -11,42 +11,58 @@ export function Contact() {
     };
 
     const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
+        name: "",
+        email: "",
+        message: "",
+    })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-  
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+    const [status, setStatus] = useState<{
+        type: "success" | "error" | null
+        message: string
+    }>({ type: null, message: "" })
+
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+
+  setStatus({ type: null, message: "" })
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+
+    const data = await res.json()
+
+    if (res.ok && data.success) {
+      setStatus({
+        type: "success",
+        message: "Message sent successfully. I’ll get back to you soon.",
       })
-  
-      const data = await res.json()
-  
-      if (res.ok && data.success) {
-        alert("Message sent successfully!")
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        })
-      } else {
-        alert(`Failed to send: ${data.error || "Something went wrong"}`)
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error)
-      alert("Failed to send. Please try again later.")
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      })
+    } else {
+      setStatus({
+        type: "error",
+        message: data.error || "Failed to send message.",
+      })
     }
+  } catch (error) {
+    setStatus({
+      type: "error",
+      message: "Something went wrong. Please try again later.",
+    })
   }
-  
+}
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev:any) => ({
@@ -79,6 +95,19 @@ export function Contact() {
             </div>
 
             <div className="max-w-lg mx-auto space-y-6">
+                {status.type && (
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`rounded-lg px-4 py-3 text-sm border ${
+                    status.type === "success"
+                        ? "bg-accent/10 border-accent/30 text-foreground"
+                        : "bg-red-500/10 border-red-500/30 text-red-400"
+                    }`}
+                >
+                    {status.message}
+                </motion.div>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-4">
                         <div>
