@@ -23,7 +23,7 @@ export function Footer() {
             
             <div className="flex items-center gap-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/toffee-k21" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-secondary-text hover:text-foreground transition-colors"
@@ -31,7 +31,7 @@ export function Footer() {
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/taufiq-hassan-311221295/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-secondary-text hover:text-foreground transition-colors"
@@ -39,8 +39,8 @@ export function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href="https://leetcode.com" 
-                target="_blank" 
+                href="https://leetcode.com/u/tfq21/" 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-secondary-text hover:text-foreground transition-colors"
               >
