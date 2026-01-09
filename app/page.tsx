@@ -348,10 +348,10 @@ function App() {
                   <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">EJS</span>
                 </div>
                 <div className="flex gap-3 pt-2">
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                  {/* <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     Architecture <ExternalLink className="w-3 h-3" />
-                  </a>
-                  <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                  </a> */}
+                  <a href="https://github.com/toffee-k21/cryon" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     GitHub <Github className="w-3 h-3" />
                   </a>
                 </div>

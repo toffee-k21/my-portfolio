@@ -52,8 +52,8 @@ export function Footer() {
           <div className="flex flex-col items-start md:items-end gap-3">
             <ThemeToggle />
             <div className="text-xs text-secondary-text space-y-1 text-left md:text-right">
-              <p>Built with React, Next.js, and Tailwind CSS</p>
-              <p>Last updated December 2024</p>
+              <p>Built with Next.js & Tailwind CSS</p>
+              <p>Last updated {new Date().getFullYear()}</p>
             </div>
           </div>
         </div>
