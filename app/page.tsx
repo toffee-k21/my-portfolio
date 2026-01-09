@@ -331,18 +331,21 @@ function App() {
               {/* Project 4 */}
               <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
                 <div className="aspect-video rounded-lg overflow-hidden border border-card-border bg-muted flex items-center justify-center">
-                  <code className="text-accent">{"<ML />"}</code>
+                  <ImageWithFallback
+                    src="/cryon.png"
+                    alt="cryon"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h4 className="text-foreground">ML Inference Pipeline</h4>
+                <h4 className="text-foreground">Cryon</h4>
                 <p className="text-secondary-text">
-                  Serverless ML inference service on AWS Lambda processing 100K+ predictions daily.
-                  Integrated TensorFlow models with S3, SQS, and DynamoDB for scalable predictions.
+                  Cryon is a real-time cryptocurrency tracking platform that displays live market trends through interactive graphs, powered by an event-driven real-time connection and user-defined price alerts.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">AWS Lambda</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">TensorFlow</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Python</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">SQS</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Dynamo DB</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Velyx</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Typescript</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">EJS</span>
                 </div>
                 <div className="flex gap-3 pt-2">
                   <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
