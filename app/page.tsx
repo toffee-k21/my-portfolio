@@ -496,7 +496,7 @@ function App() {
               <p className="text-secondary-text">Velyx</p>
             </div>
             <span className="text-sm text-secondary-text">
-              2023 – Present
+              2025 – Present
             </span>
           </div>
 
