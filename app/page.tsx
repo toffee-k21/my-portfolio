@@ -301,35 +301,6 @@ function App() {
 
               {/* Project 3 */}
               <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
-                <div className="aspect-video rounded-lg overflow-hidden border border-card-border">
-                  <ImageWithFallback
-                    src="/PRAXIS.png"
-                    alt="Microservices Orchestrator"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h4 className="text-foreground">PRAXIS</h4>
-                <p className="text-secondary-text">
-                  PRAXIS is a modern peer-to-peer mock interview platform built for students and developers preparing for placements & tech interviews.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Web-RTC</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">TurboRepo</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Next</span>
-                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Redis Pub/Sub</span>
-                </div>
-                <div className="flex gap-3 pt-2">
-                  {/* <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
-                    Case Study <ExternalLink className="w-3 h-3" />
-                  </a> */}
-                  <a href="https://github.com/toffee-k21/praxis" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
-                    GitHub <Github className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Project 4 */}
-              <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
                 <div className="aspect-video rounded-lg overflow-hidden border border-card-border bg-muted flex items-center justify-center">
                   <ImageWithFallback
                     src="/cryon.png"
@@ -352,6 +323,35 @@ function App() {
                     Architecture <ExternalLink className="w-3 h-3" />
                   </a> */}
                   <a href="https://github.com/toffee-k21/cryon" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                    GitHub <Github className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Project 4 */}
+              <div className="space-y-4 p-6 rounded-xl border border-card-border bg-card hover:border-accent/50 transition-colors">
+                <div className="aspect-video rounded-lg overflow-hidden border border-card-border">
+                  <ImageWithFallback
+                    src="/PRAXIS.png"
+                    alt="Microservices Orchestrator"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h4 className="text-foreground">PRAXIS</h4>
+                <p className="text-secondary-text">
+                  PRAXIS is a modern peer-to-peer mock interview platform built for students and developers preparing for placements & tech interviews.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Web-RTC</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">TurboRepo</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Next</span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-muted text-secondary-text">Redis Pub/Sub</span>
+                </div>
+                <div className="flex gap-3 pt-2">
+                  {/* <a href="#" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
+                    Case Study <ExternalLink className="w-3 h-3" />
+                  </a> */}
+                  <a href="https://github.com/toffee-k21/praxis" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1">
                     GitHub <Github className="w-3 h-3" />
                   </a>
                 </div>
